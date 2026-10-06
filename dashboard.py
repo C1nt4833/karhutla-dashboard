@@ -332,7 +332,7 @@ with tab3:
     st.write(f"Menampilkan **{len(df_filtered):,}** baris data berdasarkan filter aktif.")
     
     # Tampilkan preview data
-    st.dataframe(df_filtered[['date', 'province', 'grid_id', 'T2M', 'RH2M', 'PRECTOTCORR', 'hotspot_count', 'avg_frp', 'fire_status']].head(100), use_container_width=True)
+    st.dataframe(df_filtered[['date', 'province', 'grid_id', 'T2M', 'RH2M', 'PRECTOTCORR']].head(100), use_container_width=True)
     
     # Fitur Baru: Tombol Unduh Data
     csv_data = df_filtered.to_csv(index=False).encode('utf-8')
@@ -438,7 +438,7 @@ with tab4:
         * **Kinerja Terbaik di K3 (Puncak Kemarau)**: Model mencapai **Precision 92.5%** dan **Recall 91.8%** pada Kuartal 3 karena pola penurunan kelembapan (`RH2M`) dan curah hujan (`PRECTOTCORR`) sangat kontras dengan hari normal.
         * **Kesimpulan**: Model LightGBM sangat handal dalam mendeteksi dan mengantisipasi hari-hari berisiko tinggi (*fire days*) di masa mendatang.
         """)
-        
+
 # ---------------------------------------------------------
 # FOOTER INFORMASI FILTER
 # ---------------------------------------------------------
